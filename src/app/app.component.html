@@ -1,0 +1,40 @@
+<div>
+   <h1>
+      {{'Page Header = ' + pageHeader}} <br>
+      {{pageHeader ? 'pageHeader' : 'No Header'}} <br>
+      {{makeIntro()}}
+   </h1>
+
+   <!-- Binding Class to HTML Element -->
+   <h2>Binding Class to HTML Element</h2>
+   1. By Databinding
+   <button class="" [class]='classToReplace'>Hello World</button>
+   2. By Interpolation
+   <button class="" class={{classToReplace}}>Hello World</button>
+   3. Add remove particular Class
+   <button class="btn btn-danger d-block" [class.btn-danger]="toggleClass">Hello World</button>
+   4. uning ng class
+   <button class="btn" [ngClass]="addClass()">Hello World</button>
+   <!-- Binding Class to HTML Element -->
+   <!-- Binding Inline Style to HTML Element -->
+   <h2>Binding Inline Style to HTML Element</h2>
+   1.By Databinding
+   <button class="" [class]='classToReplace' [style.font-size.px]='fontSize'>Hello World</button>
+   2. By Interpolation
+   <button class="" [class]='classToReplace' style.font-size.px={{fontSize}}>Hello World</button>
+   3. Add remove particular Class
+   4. Using ngstyle
+   <button class=" btn btn-large btn-success btn-block" [ngStyle]="addStyle()">Hello World</button>
+
+   <!-- Binding Inline Style to HTML Element -->
+
+   <!-- Interpollation -->
+   <img src="{{pageLogo}}">
+   <!-- Property Binding ( mostly used in non string databinding )-->
+   <img [src]='pageLogo'>
+   <!-- Property Binding Canonical Variation-->
+   <img bind-src='pageLogo'>
+   <div>{{badHtml}}</div>
+   <div [innerHtml]='badHtml'></div>
+   <my-employee></my-employee>
+</div>

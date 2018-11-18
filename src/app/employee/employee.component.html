@@ -1,0 +1,42 @@
+<!-- Two way Data binding -->
+<h3>Two way Data binding</h3>
+Difficult
+<input [value]="firstname" (input)='firstname = $event.target.value'>
+<p>You Enterred {{firstname}}</p>
+Easy
+<input [(ngModel)]="lastname">
+<p>You Enterred {{lastname}}</p>
+
+<!-- Two way Data binding -->
+
+<table class="table">
+   <thead class="thead">
+      <!-- <tr rowspan="2" > -->
+       <!-- Attribute Binding Interpolation    -->
+      <tr attr.rowspan="{{rowSpan}}">Table Heading</tr>
+      <!-- Attribute Binding Property Binding    -->
+      <tr [attr.rowspan]="rowSpan">Table Heading</tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>First Name</td>
+         <td>{{firstname}}</td>
+      </tr>
+      <tr>
+         <td>Last Name</td>
+         <td>{{lastname}}</td>
+      </tr>
+      <tr *ngIf="showDetails">
+         <td>Gender</td>
+         <td>{{gender}}</td>
+      </tr>
+      <tr *ngIf="showDetails">
+         <td>Age</td>
+         <td>{{age}}</td>
+      </tr>
+   </tbody>
+</table>
+<button (click)="onClick()" > Test Event Binding</button>
+<button on-click="onClick()" > Test Event Binding</button>
+<button (click)="toggleShow()"> {{showDetails ? 'Hide' :'Show'}} Details</button>
+
